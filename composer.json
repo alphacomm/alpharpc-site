@@ -1,0 +1,36 @@
+{
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Reen Lokum",
+            "email": "reen@alphacomm.nl"
+        },
+        {
+            "name": "Jacob Kiers",
+            "email": "jacob@alphacomm.nl"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "AlphaRPC": "src/"
+        }
+    },
+    "repositories": [{
+        "type": "vcs",
+        "url": "https://github.com/alphacomm/alpharpc.git"
+    }],
+    "require": {
+        "alphacomm/alpharpc": "dev-master@dev",
+        "components/bootstrap": "~3.0.0",
+        "components/jquery": "~1.9.1",
+        "components/highlightjs": "~7.3.0",
+        "components/font-awesome": "~3.2.1",
+
+        "composer/composer": "@dev",
+        "dflydev/embedded-composer": "@dev",
+        "sculpin/sculpin": "2.*@dev"
+    },
+    "config": {
+        "component-dir": "source/components"
+    }
+}
