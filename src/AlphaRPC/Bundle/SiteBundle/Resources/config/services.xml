@@ -9,6 +9,7 @@
 
     <services>
         <service id="alpharpc.converter_listener" class="%alpharpc.convert_listener.class%">
+            <argument type="service" id="sculpin.site_configuration" />
             <tag name="kernel.event_subscriber" />
         </service>
 

@@ -6,9 +6,17 @@ use Sculpin\Bundle\TwigBundle\SculpinTwigBundle;
 use Sculpin\Core\Event\ConvertEvent;
 use Sculpin\Core\Sculpin;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Dflydev\DotAccessConfiguration\Configuration;
 
 class ConvertListener implements EventSubscriberInterface
 {
+    private $siteConfig;
+
+    public function __construct(Configuration $siteConfig)
+    {
+        $this->siteConfig = $siteConfig;
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -27,6 +35,10 @@ class ConvertListener implements EventSubscriberInterface
         }
         $content = $convertEvent->source()->content();
         $content = str_replace('```', '~~~', $content);
+
+        // Relative links
+        $content = preg_replace('#\(([^(://)]+).md\)#', '('.$this->siteConfig->get('url').'/\1/)', $content);
+
         $convertEvent->source()->setContent($content);
     }
 
