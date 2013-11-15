@@ -1,3 +1,4 @@
 /vendor
 /output_*
 /source/*.md
+/composer.lock
