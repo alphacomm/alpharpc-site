@@ -2,7 +2,8 @@
 
 ```
 git clone https://github.com/alphacomm/alpharpc-site.git
-composer install
+cd alpharpc-site
+composer install --no-dev
 vendor/bin/sculpin alpharpc:fetch
 vendor/bin/sculpin generate
 ```
